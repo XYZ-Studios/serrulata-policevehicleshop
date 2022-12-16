@@ -16,7 +16,7 @@ ensure serrulata-policevehicleshop
 ![Serrulata](https://i.imgur.com/cZ6T7bU.png)
 
 # **Video Preview**
-![Serrulata](https://streamable.com/v7yli4)
+[Serrulata](https://streamable.com/v7yli4)
 
 # **Dependencies**
 
