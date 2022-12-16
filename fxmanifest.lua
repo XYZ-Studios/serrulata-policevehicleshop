@@ -27,8 +27,7 @@ server_scripts {
 }
 
 dependencies {
-    -- 'ox_lib',
-    -- 'ps-ui'
+    'ox_lib'
 }
 
 lua54 'yes'
