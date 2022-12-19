@@ -40,6 +40,7 @@ RegisterNetEvent('serrulata-policeshop:server:buyVehicle', function(vehicleNumbe
         TriggerClientEvent('QBCore:Notify', src, 'You bought a ' .. vehicle.label .. ' for $' .. vehicle.price, 'success')
         TriggerClientEvent('serrulata-policeshop:client:buyVehicle', src, vehicle.model, plate)
         TriggerClientEvent('vehiclekeys:client:SetOwner', src, plate)
+        TriggerClientEvent('policeshop:client:phonemail', src, vehicleNumber)
     else
         TriggerClientEvent('QBCore:Notify', src, 'You do not have enough money', 'error')
     end

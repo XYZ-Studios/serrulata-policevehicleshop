@@ -111,13 +111,6 @@ RegisterNetEvent('policeshop:buyvehicle', function()
     
     if confirm ~= 'cancel' then
         TriggerServerEvent('serrulata-policeshop:server:buyVehicle', vehicleNumber)
-        local vehicle = Config.Vehicles[vehicleNumber]
-        local email = {
-            sender = 'Police Vehicle Shop',
-            subject = 'Vehicle Purchase',
-            message = 'You have purchased a ' .. vehicle.label .. ' It is stored in the ' .. Config.Garage .. ' Garage.',
-        }
-        TriggerServerEvent('qb-phone:server:sendNewMail', email)
     end
 end)
 RegisterNetEvent('serrulata-policevehicleshop:client:enter', function(source)  -- am not sure why made this, but it works
@@ -158,6 +151,15 @@ RegisterNetEvent('serrulata-policevehicleshop:client:leave', function(source) --
     else
         QBCore.Functions.Notify("You cannot leave while in a vehicle.")
     end
+end)
+RegisterNetEvent('policeshop:client:phonemail', function()
+    local vehicle = Config.Vehicles[vehicleNumber]
+    local email = {
+        sender = 'Police Vehicle Shop',
+        subject = 'Vehicle Purchase',
+        message = 'You have purchased a ' .. vehicle.label .. ' It is stored in the ' .. Config.Garage .. ' Garage.',
+    }
+    TriggerServerEvent('qb-phone:server:sendNewMail', email)
 end)
 ------------------------------------------------------------------------------------------
 AddEventHandler('onResourceStop', function(resource)
